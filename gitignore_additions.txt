@@ -1,0 +1,8 @@
+# --- AETHER ARAN IAM — add these lines to your existing .gitignore ---
+config.yaml
+.env
+__pycache__/
+*.pyc
+.venv/
+.venv-1/
+.venv-2/

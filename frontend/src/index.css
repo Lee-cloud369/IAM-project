@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0A0A0F;
+  color: #e1e4cf;
+  font-family: 'Poppins', 'Fira Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Atmospheric CRT Scanlines Overlay */
+.cyber-scan-lines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.25)
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: rgba(25, 29, 16, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Neon Glow Utilities */
+.glow-lime {
+  box-shadow: 0 0 15px rgba(198, 255, 0, 0.4);
+  border: 1px solid rgba(198, 255, 0, 0.5);
+}
+
+.glow-pink {
+  box-shadow: 0 0 15px rgba(255, 46, 159, 0.4);
+  border: 1px solid rgba(255, 46, 159, 0.5);
+}
+
+.glow-text-lime {
+  text-shadow: 0 0 12px rgba(190, 245, 0, 0.8);
+}
+
+.glow-text-pink {
+  text-shadow: 0 0 12px rgba(255, 46, 159, 0.8);
+}
+
+.neon-glow-primary {
+  box-shadow: 0 0 12px rgba(190, 245, 0, 0.5);
+}
+
+.neon-glow-secondary {
+  box-shadow: 0 0 12px rgba(255, 46, 159, 0.5);
+}
+
+/* Cyber Table Hover Effects */
+.cyber-table tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+.cyber-table tbody tr:nth-child(odd) {
+  background-color: rgba(25, 29, 16, 0.25);
+}
+
+.cyber-table tbody tr:hover {
+  background-color: rgba(198, 255, 0, 0.06);
+}
+
+/* Custom Scrollbar for Cyberpunk Aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0f04;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #282c1d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bef500;
+}

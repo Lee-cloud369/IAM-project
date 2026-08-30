@@ -1,0 +1,47 @@
+# =============================================================================
+# AETHER ARAN IAM - GIT IGNORE CONFIGURATION (SECURITY HARDENED)
+# =============================================================================
+
+# 1. Environment variables and secrets (NEVER commit to Git)
+.env
+.env.*
+!.env.example
+
+# 2. Application logs and telemetry records
+logs/
+*.log
+part 1/logs/
+api/logs/
+
+# 3. Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 4. Virtual environments
+.venv/
+.venv-*/
+venv/
+ENV/
+env/
+
+# 5. Node / Frontend dependencies & build outputs
+frontend/node_modules/
+node_modules/
+frontend/dist/
+dist/
+.vite/
+frontend/.vite/
+
+# 6. IDE and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 7. Legacy config files with sensitive data
+part 1/config.yaml

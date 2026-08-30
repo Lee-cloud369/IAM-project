@@ -1,0 +1,401 @@
+username,policy,service,status,risk
+lee-admin,AdministratorAccess,AWS App2Container,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Alexa for Business,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS IAM Access Analyzer,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Account Management,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Certificate Manager,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Private Certificate Authority,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Compute Optimizer Automation,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Action Recommendations,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Activate,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon WorkSpaces AgentAccess MCP Server,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS DevOps Agent Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon AI Operations,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Managed Workflows for Apache Airflow,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS MWAA Serverless,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Amplify,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Amplify Admin,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Amplify UI Builder,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon OpenSearch Serverless,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Manage - Amazon API Gateway,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon AppIntegrations,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS AppConfig,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS AppFabric,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon AppFlow,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Application Auto Scaling,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CloudWatch Application Signals,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CloudWatch Application Signals MCP Server,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Application Transformation Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CloudWatch Application Insights,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS App Mesh,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS App Mesh Preview,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS App Runner,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon AppStream 2.0,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS App Studio,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS AppSync,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Mainframe Modernization Application Testing,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Managed Service for Prometheus,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon ARC Region switch,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Application Recovery Controller - Zonal Shift,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Application Discovery Arsenal,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Artifact,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Athena,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Audit Manager,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon EC2 Auto Scaling,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Auto Scaling,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Claude Platform on AWS,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Marketplace,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Marketplace Management Portal,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Billing Console,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Connector Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS B2B Data Interchange,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Backup,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Backup Gateway,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Backup Search,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Backup storage,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Batch,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Billing and Cost Management Dashboards,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Billing And Cost Management Data Exports,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Billing And Cost Management Pricing Calculator,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Billing And Cost Management Recommended Actions,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Bedrock,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Bedrock Agentcore,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Bedrock Powered by AWS Mantle,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Billing,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Billing Conductor,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Braket,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Budget Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS BugBust,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Connect Cases,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Keyspaces (for Apache Cassandra),NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Cost Explorer Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Chatbot,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Chime,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Clean Rooms,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Clean Rooms ML,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Cloud9,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Cloud Directory,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CloudFormation,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CloudFront,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CloudFront KeyValueStore,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CloudHSM,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CloudSearch,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CloudShell,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CloudTrail,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CloudTrail Data,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CloudWatch,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeArtifact,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeBuild,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CodeCatalyst,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeCommit,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeConnections,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeDeploy,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeDeploy secure host commands service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CodeGuru,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CodeGuru Profiler,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CodeGuru Reviewer,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CodeGuru Security,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodePipeline,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeStar,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeStar Connections,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS CodeStar Notifications,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CodeWhisperer,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Cognito Identity,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Cognito User Pools,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Cognito Sync,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Comprehend,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Comprehend Medical,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Compute Optimizer,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Config,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Connect,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Connect Outbound Campaigns,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Console Mobile App,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Consolidated Billing,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Control Catalog,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Control Tower,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Cost Optimization Hub,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Cost and Usage Report,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Customer Verification Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Glue DataBrew,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Data Exchange,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Data Pipeline,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS DataSync,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon DataZone,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon DynamoDB Accelerator (DAX),NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Database Query Metadata Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Deadline Cloud,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Detective,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Device Farm,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon DevOps Guru,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Direct Connect,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Application Discovery Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Data Lifecycle Manager,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Database Migration Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon DocumentDB Elastic Clusters,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Elastic Disaster Recovery,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Directory Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Directory Service Data,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Aurora DSQL,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon DynamoDB,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic Block Store,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon EC2,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon EC2 Instance Connect,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Message Delivery Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic Container Registry,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic Container Registry Public,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic Container Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon ECS MCP Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic Kubernetes Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon EKS Auth,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon EKS MCP Server,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon ElastiCache,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Elastic Beanstalk,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic File System,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Elastic Load Balancing,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic MapReduce,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic Transcoder,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Elemental Appliances and Software Activation Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Elemental Appliances and Software,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Elemental Inference,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Elemental Support Cases,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Elemental Support Content,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon EMR on EKS (EMR Containers),NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon EMR Serverless,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Entity Resolution,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon OpenSearch Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon EventBridge,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS reInvent event pass amount charge to customer AWS account,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon CloudWatch Evidently,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Elastic VMware Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon API Gateway,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS FinOps Agent,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon FinSpace,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon FinSpace API,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Kinesis Firehose,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Fault Injection Service,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Firewall Manager,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Forecast,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Fraud Detector,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon FreeRTOS,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Free Tier,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon FSx,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon GameLift Servers,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon GameLift Streams,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Location,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Location Service Maps,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Location Service Places,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Location Service Routes,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon S3 Glacier,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Global Accelerator,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Glue,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Managed Grafana,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS IoT Greengrass,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Ground Station,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon GroundTruth Labeling,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon GuardDuty,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Health APIs and Notifications,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Connect Health,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS HealthLake,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,Amazon Honeycode,NEVER USED,HIGH RISK - Unused Admin Permission
+lee-admin,AdministratorAccess,AWS Identity and Access Management,USED,OK
+lee-admin,AdministratorAccess,AWS Identity Sync,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS App2Container,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Alexa for Business,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS IAM Access Analyzer,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Account Management,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Certificate Manager,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Private Certificate Authority,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Compute Optimizer Automation,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Action Recommendations,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Activate,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon WorkSpaces AgentAccess MCP Server,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS DevOps Agent Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon AI Operations,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Managed Workflows for Apache Airflow,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS MWAA Serverless,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Amplify,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Amplify Admin,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Amplify UI Builder,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon OpenSearch Serverless,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Manage - Amazon API Gateway,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon AppIntegrations,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS AppConfig,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS AppFabric,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon AppFlow,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Application Auto Scaling,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CloudWatch Application Signals,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CloudWatch Application Signals MCP Server,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Application Transformation Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CloudWatch Application Insights,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS App Mesh,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS App Mesh Preview,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS App Runner,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon AppStream 2.0,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS App Studio,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS AppSync,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Mainframe Modernization Application Testing,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Managed Service for Prometheus,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon ARC Region switch,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Application Recovery Controller - Zonal Shift,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Application Discovery Arsenal,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Artifact,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Athena,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Audit Manager,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon EC2 Auto Scaling,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Auto Scaling,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Claude Platform on AWS,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Marketplace,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Marketplace Management Portal,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Billing Console,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Connector Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS B2B Data Interchange,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Backup,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Backup Gateway,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Backup Search,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Backup storage,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Batch,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Billing and Cost Management Dashboards,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Billing And Cost Management Data Exports,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Billing And Cost Management Pricing Calculator,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Billing And Cost Management Recommended Actions,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Bedrock,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Bedrock Agentcore,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Bedrock Powered by AWS Mantle,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Billing,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Billing Conductor,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Braket,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Budget Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS BugBust,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Connect Cases,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Keyspaces (for Apache Cassandra),NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Cost Explorer Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Chatbot,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Chime,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Clean Rooms,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Clean Rooms ML,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Cloud9,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Cloud Directory,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CloudFormation,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CloudFront,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CloudFront KeyValueStore,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CloudHSM,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CloudSearch,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CloudShell,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CloudTrail,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CloudTrail Data,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CloudWatch,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeArtifact,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeBuild,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CodeCatalyst,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeCommit,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeConnections,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeDeploy,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeDeploy secure host commands service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CodeGuru,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CodeGuru Profiler,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CodeGuru Reviewer,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CodeGuru Security,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodePipeline,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeStar,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeStar Connections,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS CodeStar Notifications,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CodeWhisperer,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Cognito Identity,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Cognito User Pools,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Cognito Sync,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Comprehend,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Comprehend Medical,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Compute Optimizer,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Config,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Connect,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Connect Outbound Campaigns,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Console Mobile App,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Consolidated Billing,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Control Catalog,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Control Tower,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Cost Optimization Hub,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Cost and Usage Report,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Customer Verification Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Glue DataBrew,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Data Exchange,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Data Pipeline,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS DataSync,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon DataZone,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon DynamoDB Accelerator (DAX),NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Database Query Metadata Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Deadline Cloud,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Detective,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Device Farm,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon DevOps Guru,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Direct Connect,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Application Discovery Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Data Lifecycle Manager,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Database Migration Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon DocumentDB Elastic Clusters,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Elastic Disaster Recovery,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Directory Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Directory Service Data,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Aurora DSQL,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon DynamoDB,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic Block Store,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon EC2,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon EC2 Instance Connect,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Message Delivery Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic Container Registry,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic Container Registry Public,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic Container Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon ECS MCP Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic Kubernetes Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon EKS Auth,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon EKS MCP Server,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon ElastiCache,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Elastic Beanstalk,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic File System,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Elastic Load Balancing,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic MapReduce,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic Transcoder,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Elemental Appliances and Software Activation Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Elemental Appliances and Software,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Elemental Inference,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Elemental Support Cases,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Elemental Support Content,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon EMR on EKS (EMR Containers),NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon EMR Serverless,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Entity Resolution,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon OpenSearch Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon EventBridge,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS reInvent event pass amount charge to customer AWS account,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon CloudWatch Evidently,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Elastic VMware Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon API Gateway,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS FinOps Agent,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon FinSpace,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon FinSpace API,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Kinesis Firehose,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Fault Injection Service,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Firewall Manager,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Forecast,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Fraud Detector,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon FreeRTOS,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Free Tier,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon FSx,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon GameLift Servers,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon GameLift Streams,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Location,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Location Service Maps,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Location Service Places,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Location Service Routes,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon S3 Glacier,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Global Accelerator,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Glue,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Managed Grafana,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS IoT Greengrass,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Ground Station,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon GroundTruth Labeling,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon GuardDuty,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Health APIs and Notifications,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Connect Health,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS HealthLake,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,Amazon Honeycode,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Identity and Access Management,NEVER USED,HIGH RISK - Unused Admin Permission
+test-user-1,AdministratorAccess,AWS Identity Sync,NEVER USED,HIGH RISK - Unused Admin Permission
