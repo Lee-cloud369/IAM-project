@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
 import { getCredentialHygiene, remediateAccessKey, remediateMfaFlag } from '../services/api';
 import EventDetailModal from '../components/EventDetailModal';
+import CountUpNumber from '../components/CountUpNumber';
 
 export default function CredentialHygienePage({ searchTerm, onNavigateToAssistant }) {
   const [rows, setRows] = useState([]);
@@ -137,6 +139,54 @@ export default function CredentialHygienePage({ searchTerm, onNavigateToAssistan
   const staleKeyCount = summary
     ? summary.keys_needing_rotation
     : rows.filter((r) => String(r.risk).toLowerCase().includes('rotated')).length;
+  const totalIdentities = rows.length || 6;
+  const mfaCompliantCount = Math.max(0, totalIdentities - noMfaCount);
+  const rotatedKeyCount = Math.max(0, totalIdentities - staleKeyCount);
+
+  // Bar Chart dataset for MFA and Key compliance comparison
+  const mfaChartData = useMemo(() => {
+    return [
+      {
+        metric: 'MFA Enforcement',
+        Compliant: mfaCompliantCount,
+        NonCompliant: noMfaCount,
+      },
+      {
+        metric: 'Key Rotation (90d)',
+        Compliant: rotatedKeyCount,
+        NonCompliant: staleKeyCount,
+      },
+    ];
+  }, [totalIdentities, noMfaCount, staleKeyCount, mfaCompliantCount, rotatedKeyCount]);
+
+  const CustomBarTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-[#12140e]/95 border border-outline-variant/60 p-3 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.8)] backdrop-blur-md z-50 text-xs">
+          <div className="font-label-caps uppercase text-primary font-bold mb-1.5 border-b border-outline-variant/30 pb-1">
+            {label} Telemetry
+          </div>
+          <div className="space-y-1 font-mono">
+            <div className="flex items-center justify-between gap-4">
+              <span className="flex items-center gap-1.5 text-primary-fixed">
+                <span className="w-2 h-2 rounded-full bg-primary-fixed"></span>
+                Compliant (MFA/Active):
+              </span>
+              <span className="font-bold text-primary">{payload[0]?.value ?? 0}</span>
+            </div>
+            <div className="flex items-center justify-between gap-4">
+              <span className="flex items-center gap-1.5 text-[#FF2E9F]">
+                <span className="w-2 h-2 rounded-full bg-[#FF2E9F]"></span>
+                Non-Compliant (Risk):
+              </span>
+              <span className="font-bold text-primary">{payload[1]?.value ?? 0}</span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className="space-y-8 animate-fadeIn pt-2 sm:pt-4">
@@ -220,7 +270,7 @@ export default function CredentialHygienePage({ searchTerm, onNavigateToAssistan
             </svg>
             <div className="text-center z-10">
               <span className="font-metric-lg text-6xl text-primary-fixed glow-text-lime block leading-none">
-                78
+                <CountUpNumber value={78} />
               </span>
               <span className="font-label-caps text-xs text-on-surface-variant block mt-1 tracking-widest uppercase">
                 / 100 Posture
@@ -241,7 +291,7 @@ export default function CredentialHygienePage({ searchTerm, onNavigateToAssistan
             </div>
             <div className="mt-4">
               <span className="font-metric-lg text-5xl text-primary drop-shadow-[0_0_10px_rgba(255,46,159,0.7)] leading-none">
-                {staleKeyCount}
+                <CountUpNumber value={staleKeyCount} />
               </span>
               <div className="font-body-md text-xs text-secondary mt-1 font-semibold">
                 &gt; 90 days rotation limit
@@ -259,7 +309,7 @@ export default function CredentialHygienePage({ searchTerm, onNavigateToAssistan
             </div>
             <div className="mt-4">
               <span className="font-metric-lg text-5xl text-primary glow-text-lime leading-none">
-                {noMfaCount}
+                <CountUpNumber value={noMfaCount} />
               </span>
               <div className="font-body-md text-xs text-primary-fixed mt-1 font-semibold">
                 Critical Compliance Risk
@@ -284,6 +334,44 @@ export default function CredentialHygienePage({ searchTerm, onNavigateToAssistan
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Cyberpunk MFA & Key Posture Bar Chart */}
+      <div className="glass-panel p-6 rounded-xl border border-outline-variant/30 shadow-2xl relative overflow-hidden">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-outline-variant/20 mb-4">
+          <div>
+            <h3 className="font-headline-sm text-lg text-primary uppercase flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary-fixed">stacked_bar_chart</span>
+              MFA & Access Key Compliance Breakdown
+            </h3>
+            <p className="font-label-caps text-xs text-on-surface-variant uppercase tracking-wider mt-0.5">
+              Comparison of compliant vs non-compliant IAM credentials
+            </p>
+          </div>
+          <div className="flex items-center gap-4 text-xs font-mono">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-primary-fixed"></span>
+              <span className="text-on-surface">Compliant</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF2E9F]"></span>
+              <span className="text-on-surface">At Risk / Action Required</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-44 w-full pt-1">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={mfaChartData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#282c1d" horizontal={false} opacity={0.6} />
+              <XAxis type="number" stroke="#8e918f" fontSize={11} tickLine={false} axisLine={{ stroke: '#282c1d' }} allowDecimals={false} />
+              <YAxis type="category" dataKey="metric" stroke="#e1e4cf" fontSize={12} tickLine={false} axisLine={{ stroke: '#282c1d' }} width={130} />
+              <Tooltip content={<CustomBarTooltip />} />
+              <Bar dataKey="Compliant" name="Compliant" fill="#BEF500" radius={[0, 4, 4, 0]} barSize={16} />
+              <Bar dataKey="NonCompliant" name="Non-Compliant" fill="#FF2E9F" radius={[0, 4, 4, 0]} barSize={16} />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
 

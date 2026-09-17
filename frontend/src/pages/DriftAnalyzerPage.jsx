@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getDriftReport, remediateDrift, remediateAllDrift } from '../services/api';
 import EventDetailModal from '../components/EventDetailModal';
+import CountUpNumber from '../components/CountUpNumber';
 
 export default function DriftAnalyzerPage({ searchTerm, onNavigateToAssistant }) {
   const [rows, setRows] = useState([]);
@@ -206,7 +207,7 @@ export default function DriftAnalyzerPage({ searchTerm, onNavigateToAssistant })
                 Total Unused Permissions
               </h3>
               <div className="font-metric-lg text-metric-lg text-primary mt-4 tracking-wider flex items-baseline gap-2 glow-text-lime">
-                {unusedCount.toLocaleString()}
+                <CountUpNumber value={unusedCount} />
                 <span className="font-body-md text-sm text-secondary ml-1 flex items-center font-bold">
                   <span className="material-symbols-outlined text-xs">arrow_upward</span> 12%
                 </span>
@@ -227,7 +228,7 @@ export default function DriftAnalyzerPage({ searchTerm, onNavigateToAssistant })
                 High Risk Admin Drift
               </h3>
               <div className="font-metric-md text-4xl text-primary mt-2 drop-shadow-[0_0_8px_rgba(255,46,159,0.7)]">
-                {highRiskDrift}
+                <CountUpNumber value={highRiskDrift} />
               </div>
             </div>
             <div className="mt-4">
@@ -248,7 +249,7 @@ export default function DriftAnalyzerPage({ searchTerm, onNavigateToAssistant })
                 Active / Used Services
               </h3>
               <div className="font-metric-md text-4xl text-primary mt-2 drop-shadow-[0_0_8px_rgba(190,245,0,0.7)]">
-                {usedCount}
+                <CountUpNumber value={usedCount} />
               </div>
             </div>
             <div className="mt-4">

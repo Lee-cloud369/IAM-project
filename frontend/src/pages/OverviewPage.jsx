@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip } from 'recharts';
 import { getPrivilegeEscalation } from '../services/api';
 import EventDetailModal from '../components/EventDetailModal';
+import CountUpNumber from '../components/CountUpNumber';
 
 export default function OverviewPage({ searchTerm, onNavigateToAssistant }) {
   const [data, setData] = useState([]);
@@ -74,7 +76,46 @@ export default function OverviewPage({ searchTerm, onNavigateToAssistant }) {
   const mediumCount = summary
     ? summary.medium_risk_count
     : data.filter((d) => String(d.risk_level).toUpperCase() === 'MEDIUM').length;
+  const lowCount = summary
+    ? (summary.low_risk_count ?? data.filter((d) => String(d.risk_level).toUpperCase() === 'LOW').length)
+    : data.filter((d) => String(d.risk_level).toUpperCase() === 'LOW').length;
   const totalCount = summary ? summary.total_events : data.length;
+
+  // Chart dataset for Risk Breakdown Donut Chart
+  const riskChartData = useMemo(() => {
+    const total = (criticalCount + highCount + mediumCount + lowCount) || 1;
+    const chartItems = [
+      { name: 'Critical', value: criticalCount, color: '#FF2E9F', border: '#FF2E9F' },
+      { name: 'High', value: highCount, color: '#FF5449', border: '#FF5449' },
+      { name: 'Medium', value: mediumCount, color: '#BEF500', border: '#BEF500' },
+      { name: 'Low', value: lowCount, color: '#38BDF8', border: '#38BDF8' },
+    ];
+    return chartItems
+      .filter((item) => item.value > 0)
+      .map((item) => ({
+        ...item,
+        percent: Math.round((item.value / total) * 100),
+      }));
+  }, [criticalCount, highCount, mediumCount, lowCount]);
+
+  // Custom Chart Tooltip with glassmorphism
+  const CustomPieTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const pData = payload[0].payload;
+      return (
+        <div className="bg-[#12140e]/95 border border-outline-variant/60 p-3 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.8)] backdrop-blur-md z-50">
+          <div className="flex items-center gap-2 font-label-caps text-xs uppercase tracking-wider">
+            <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: pData.color }}></span>
+            <span className="text-primary font-bold">{pData.name} Risk</span>
+          </div>
+          <div className="font-mono text-sm text-on-surface mt-1">
+            <span className="text-primary-fixed font-bold">{pData.value}</span> findings ({pData.percent}%)
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className="space-y-8 animate-fadeIn pt-2 sm:pt-4">
@@ -133,7 +174,7 @@ export default function OverviewPage({ searchTerm, onNavigateToAssistant }) {
         </div>
       )}
 
-      {/* Bento Metric Cards (4-Column Grid) */}
+      {/* Bento Metric Cards (4-Column Grid with Animated Count-Up) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Card 1: Total Events */}
         <div className="glass-panel p-6 rounded-lg relative overflow-hidden group hover:border-primary-fixed/50 transition-all duration-300">
@@ -147,7 +188,7 @@ export default function OverviewPage({ searchTerm, onNavigateToAssistant }) {
             </span>
           </div>
           <div className="font-metric-lg text-metric-lg text-primary glow-text-lime transition-all duration-300">
-            {totalCount.toLocaleString()}
+            <CountUpNumber value={totalCount} />
           </div>
           <div className="mt-2 flex items-center gap-1 text-primary-fixed font-label-caps text-xs tracking-wider">
             <span className="material-symbols-outlined text-sm">arrow_upward</span>
@@ -167,7 +208,7 @@ export default function OverviewPage({ searchTerm, onNavigateToAssistant }) {
             </span>
           </div>
           <div className="font-metric-lg text-metric-lg text-primary drop-shadow-[0_0_12px_rgba(255,46,159,0.8)]">
-            {criticalCount}
+            <CountUpNumber value={criticalCount} />
           </div>
           <div className="mt-2 flex items-center gap-1 text-[#FF2E9F] font-label-caps text-xs tracking-wider font-semibold">
             <span className="material-symbols-outlined text-sm animate-bounce">priority_high</span>
@@ -187,7 +228,7 @@ export default function OverviewPage({ searchTerm, onNavigateToAssistant }) {
             </span>
           </div>
           <div className="font-metric-lg text-metric-lg text-primary drop-shadow-[0_0_10px_rgba(255,46,159,0.5)]">
-            {highCount}
+            <CountUpNumber value={highCount} />
           </div>
           <div className="mt-2 flex items-center gap-1 text-on-surface-variant font-label-caps text-xs tracking-wider">
             <span className="material-symbols-outlined text-sm">security_update_warning</span>
@@ -207,11 +248,171 @@ export default function OverviewPage({ searchTerm, onNavigateToAssistant }) {
             </span>
           </div>
           <div className="font-metric-lg text-metric-lg text-primary drop-shadow-[0_0_10px_rgba(198,255,0,0.5)]">
-            {mediumCount}
+            <CountUpNumber value={mediumCount} />
           </div>
           <div className="mt-2 flex items-center gap-1 text-on-surface-variant font-label-caps text-xs tracking-wider">
             <span className="material-symbols-outlined text-sm">horizontal_rule</span>
             Stable posture
+          </div>
+        </div>
+      </div>
+
+      {/* Cyberpunk Visual Risk Breakdown Chart Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Donut Chart Card (7 Cols) */}
+        <div className="lg:col-span-7 glass-panel p-6 rounded-xl border border-outline-variant/30 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+          <div className="flex items-center justify-between pb-4 border-b border-outline-variant/20 mb-4">
+            <div>
+              <h3 className="font-headline-sm text-lg text-primary uppercase flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary-fixed">pie_chart</span>
+                Risk Findings Distribution
+              </h3>
+              <p className="font-label-caps text-xs text-on-surface-variant uppercase tracking-wider mt-0.5">
+                Breakdown of active threats across evaluated CloudTrail events
+              </p>
+            </div>
+            <div className="text-xs font-mono text-primary-fixed bg-primary-fixed/10 px-2.5 py-1 rounded border border-primary-fixed/30 hidden sm:block">
+              {totalCount} Total Findings
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+            {/* Recharts Donut Pie */}
+            <div className="sm:col-span-7 h-56 w-full relative flex items-center justify-center">
+              {riskChartData.length === 0 ? (
+                <div className="text-center font-mono text-xs text-on-surface-variant">
+                  No risk findings data available.
+                </div>
+              ) : (
+                <>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Tooltip content={<CustomPieTooltip />} />
+                      <Pie
+                        data={riskChartData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={55}
+                        outerRadius={80}
+                        paddingAngle={4}
+                        dataKey="value"
+                        stroke="#0c0f04"
+                        strokeWidth={2}
+                      >
+                        {riskChartData.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={entry.color}
+                            style={{ filter: `drop-shadow(0 0 6px ${entry.color}66)` }}
+                          />
+                        ))}
+                      </Pie>
+                    </PieChart>
+                  </ResponsiveContainer>
+                  {/* Center Metric Label */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                    <span className="font-metric-md text-2xl text-primary font-bold leading-none">
+                      {totalCount}
+                    </span>
+                    <span className="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest mt-0.5">
+                      Findings
+                    </span>
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Custom Interactive Legend Badges */}
+            <div className="sm:col-span-5 space-y-2.5">
+              {[
+                { name: 'Critical', count: criticalCount, color: '#FF2E9F', key: 'CRITICAL', bg: 'bg-[#FF2E9F]/10', border: 'border-[#FF2E9F]/40' },
+                { name: 'High', count: highCount, color: '#FF5449', key: 'HIGH', bg: 'bg-[#FF5449]/10', border: 'border-[#FF5449]/40' },
+                { name: 'Medium', count: mediumCount, color: '#BEF500', key: 'MEDIUM', bg: 'bg-[#BEF500]/10', border: 'border-[#BEF500]/40' },
+                { name: 'Low', count: lowCount, color: '#38BDF8', key: 'LOW', bg: 'bg-[#38BDF8]/10', border: 'border-[#38BDF8]/40' },
+              ].map((item) => {
+                const percent = totalCount > 0 ? Math.round((item.count / totalCount) * 100) : 0;
+                const isActive = filterRisk === item.key;
+                return (
+                  <button
+                    key={item.name}
+                    onClick={() => setFilterRisk(filterRisk === item.key ? 'ALL' : item.key)}
+                    className={`w-full p-2 rounded-lg border transition-all text-left flex items-center justify-between group ${item.bg} ${
+                      isActive ? 'border-primary-fixed ring-1 ring-primary-fixed shadow-[0_0_10px_rgba(190,245,0,0.3)]' : item.border
+                    } hover:border-primary-fixed/60`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: item.color }}></span>
+                      <span className="font-label-caps text-xs text-on-surface uppercase tracking-wider font-semibold">
+                        {item.name}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 font-mono text-xs">
+                      <span className="text-primary font-bold">{item.count}</span>
+                      <span className="text-on-surface-variant text-[10px]">({percent}%)</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Posture Summary Card (5 Cols) */}
+        <div className="lg:col-span-5 glass-panel p-6 rounded-xl border border-outline-variant/30 flex flex-col justify-between shadow-2xl">
+          <div>
+            <div className="flex items-center justify-between pb-4 border-b border-outline-variant/20 mb-4">
+              <h3 className="font-headline-sm text-lg text-primary uppercase flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary-fixed">security</span>
+                Threat Posture Gauge
+              </h3>
+              <span className={`font-label-caps text-xs uppercase px-2 py-0.5 rounded font-bold ${
+                criticalCount > 0 ? 'bg-[#FF2E9F]/20 text-[#FF2E9F] border border-[#FF2E9F]' : 'bg-primary-fixed/20 text-primary-fixed border border-primary-fixed'
+              }`}>
+                {criticalCount > 0 ? 'Elevated Risk' : 'Protected'}
+              </span>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <div className="flex justify-between text-xs font-label-caps uppercase text-on-surface-variant mb-1.5">
+                  <span>Critical Severity Burden</span>
+                  <span className="font-mono text-[#FF2E9F] font-bold">
+                    {totalCount > 0 ? Math.round((criticalCount / totalCount) * 100) : 0}%
+                  </span>
+                </div>
+                <div className="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden border border-outline-variant/30">
+                  <div
+                    className="bg-[#FF2E9F] h-full transition-all duration-700 shadow-[0_0_8px_rgba(255,46,159,0.8)]"
+                    style={{ width: `${totalCount > 0 ? (criticalCount / totalCount) * 100 : 0}%` }}
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex justify-between text-xs font-label-caps uppercase text-on-surface-variant mb-1.5">
+                  <span>Medium / Controlled Scope</span>
+                  <span className="font-mono text-primary-fixed font-bold">
+                    {totalCount > 0 ? Math.round((mediumCount / totalCount) * 100) : 0}%
+                  </span>
+                </div>
+                <div className="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden border border-outline-variant/30">
+                  <div
+                    className="bg-primary-fixed h-full transition-all duration-700 shadow-[0_0_8px_rgba(190,245,0,0.8)]"
+                    style={{ width: `${totalCount > 0 ? (mediumCount / totalCount) * 100 : 0}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-4 border-t border-outline-variant/20 mt-4 flex items-center justify-between text-xs font-mono text-on-surface-variant">
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+              Live AWS Ingestion
+            </span>
+            <span className="text-primary-fixed font-label-caps uppercase text-[11px]">
+              {filterRisk !== 'ALL' ? `Filtered by ${filterRisk}` : 'All Risks Displayed'}
+            </span>
           </div>
         </div>
       </div>

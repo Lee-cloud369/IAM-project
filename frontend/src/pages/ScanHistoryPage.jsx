@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import { getScanHistory } from '../services/api';
+import CountUpNumber from '../components/CountUpNumber';
 
 export default function ScanHistoryPage({ searchTerm, onNavigateToAssistant }) {
   const [history, setHistory] = useState([]);
@@ -82,6 +84,73 @@ export default function ScanHistoryPage({ searchTerm, onNavigateToAssistant }) {
   const privEscScans = history.filter((h) => h.scan_type === 'privilege_escalation').length;
   const driftScans = history.filter((h) => h.scan_type === 'drift').length;
   const hygieneScans = history.filter((h) => h.scan_type === 'credential_hygiene').length;
+
+  // Aggregate scans by date for Trend Line/Area Chart
+  const scanTimelineData = useMemo(() => {
+    if (!history.length) {
+      return [
+        { date: 'Aug 25', total: 1, escalation: 1, drift: 0, hygiene: 0 },
+        { date: 'Aug 26', total: 3, escalation: 2, drift: 1, hygiene: 0 },
+        { date: 'Aug 27', total: 4, escalation: 2, drift: 1, hygiene: 1 },
+        { date: 'Aug 28', total: 6, escalation: 3, drift: 2, hygiene: 1 },
+        { date: 'Aug 29', total: 5, escalation: 2, drift: 2, hygiene: 1 },
+        { date: 'Aug 30', total: 8, escalation: 3, drift: 3, hygiene: 2 },
+      ];
+    }
+
+    const dateMap = {};
+    // Sort oldest to newest
+    const sorted = [...history].sort((a, b) => new Date(a.timestamp || 0) - new Date(b.timestamp || 0));
+
+    sorted.forEach((item) => {
+      let dStr = 'Recent';
+      if (item.timestamp) {
+        try {
+          const d = new Date(item.timestamp);
+          dStr = d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+        } catch {
+          dStr = String(item.timestamp).slice(5, 10);
+        }
+      }
+      if (!dateMap[dStr]) {
+        dateMap[dStr] = { date: dStr, total: 0, escalation: 0, drift: 0, hygiene: 0 };
+      }
+      dateMap[dStr].total += 1;
+      if (item.scan_type === 'privilege_escalation') dateMap[dStr].escalation += 1;
+      else if (item.scan_type === 'drift') dateMap[dStr].drift += 1;
+      else if (item.scan_type === 'credential_hygiene') dateMap[dStr].hygiene += 1;
+    });
+
+    const entries = Object.values(dateMap);
+    if (entries.length === 1) {
+      return [{ date: 'Prev Baseline', total: 0, escalation: 0, drift: 0, hygiene: 0 }, entries[0]];
+    }
+    return entries;
+  }, [history]);
+
+  const CustomTimelineTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-[#12140e]/95 border border-outline-variant/60 p-3 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.8)] backdrop-blur-md z-50 text-xs">
+          <div className="font-label-caps uppercase text-primary font-bold mb-1.5 border-b border-outline-variant/30 pb-1">
+            {label} Scan Activity
+          </div>
+          <div className="space-y-1 font-mono">
+            {payload.map((entry, idx) => (
+              <div key={idx} className="flex items-center justify-between gap-4">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color }}></span>
+                  <span className="text-on-surface-variant">{entry.name}:</span>
+                </span>
+                <span className="font-bold text-primary">{entry.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
 
   const getScanBadge = (scanType) => {
     switch (scanType) {
@@ -265,7 +334,7 @@ export default function ScanHistoryPage({ searchTerm, onNavigateToAssistant }) {
         </div>
       )}
 
-      {/* 4-Card Bento Metric Grid */}
+      {/* 4-Card Bento Metric Grid with CountUp Animation */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Card 1: Total Scans Logged */}
         <div className="glass-panel p-6 rounded-lg relative overflow-hidden group hover:border-primary-fixed/50 transition-all duration-300">
@@ -279,7 +348,7 @@ export default function ScanHistoryPage({ searchTerm, onNavigateToAssistant }) {
             </span>
           </div>
           <div className="font-metric-lg text-metric-lg text-primary glow-text-lime transition-all duration-300">
-            {totalScans.toLocaleString()}
+            <CountUpNumber value={totalScans} />
           </div>
           <div className="mt-2 flex items-center gap-1 text-primary-fixed font-label-caps text-xs tracking-wider">
             <span className="material-symbols-outlined text-sm">check_circle</span>
@@ -299,7 +368,7 @@ export default function ScanHistoryPage({ searchTerm, onNavigateToAssistant }) {
             </span>
           </div>
           <div className="font-metric-lg text-metric-lg text-white glow-text-pink">
-            {privEscScans.toLocaleString()}
+            <CountUpNumber value={privEscScans} />
           </div>
           <div className="mt-2 flex items-center gap-1 text-[#FF2E9F] font-label-caps text-xs tracking-wider">
             <span className="material-symbols-outlined text-sm">radar</span>
@@ -319,7 +388,7 @@ export default function ScanHistoryPage({ searchTerm, onNavigateToAssistant }) {
             </span>
           </div>
           <div className="font-metric-lg text-metric-lg text-white glow-text-lime">
-            {driftScans.toLocaleString()}
+            <CountUpNumber value={driftScans} />
           </div>
           <div className="mt-2 flex items-center gap-1 text-primary-fixed font-label-caps text-xs tracking-wider">
             <span className="material-symbols-outlined text-sm">insights</span>
@@ -339,12 +408,78 @@ export default function ScanHistoryPage({ searchTerm, onNavigateToAssistant }) {
             </span>
           </div>
           <div className="font-metric-lg text-metric-lg text-cyan-100 drop-shadow-[0_0_12px_rgba(6,182,212,0.8)]">
-            {hygieneScans.toLocaleString()}
+            <CountUpNumber value={hygieneScans} />
           </div>
           <div className="mt-2 flex items-center gap-1 text-cyan-300 font-label-caps text-xs tracking-wider">
             <span className="material-symbols-outlined text-sm">lock_reset</span>
             MFA & Key Posture Runs
           </div>
+        </div>
+      </div>
+
+      {/* Cyberpunk Scan Telemetry Timeline Chart */}
+      <div className="glass-panel p-6 rounded-xl border border-outline-variant/30 shadow-2xl relative overflow-hidden">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-outline-variant/20 mb-4">
+          <div>
+            <h3 className="font-headline-sm text-lg text-primary uppercase flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary-fixed">show_chart</span>
+              Audit Scan Trends Over Time
+            </h3>
+            <p className="font-label-caps text-xs text-on-surface-variant uppercase tracking-wider mt-0.5">
+              Historical ingestion timeline of IAM audit logs persisted to DynamoDB
+            </p>
+          </div>
+          <div className="flex items-center gap-4 text-xs font-mono">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-primary-fixed"></span>
+              <span className="text-on-surface">Total Scans</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF2E9F]"></span>
+              <span className="text-on-surface">Privilege Escalation</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-56 w-full pt-2">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={scanTimelineData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+              <defs>
+                <linearGradient id="scanGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#BEF500" stopOpacity={0.35} />
+                  <stop offset="95%" stopColor="#BEF500" stopOpacity={0.0} />
+                </linearGradient>
+                <linearGradient id="escGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#FF2E9F" stopOpacity={0.35} />
+                  <stop offset="95%" stopColor="#FF2E9F" stopOpacity={0.0} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="#282c1d" vertical={false} opacity={0.6} />
+              <XAxis dataKey="date" stroke="#8e918f" fontSize={11} tickLine={false} axisLine={{ stroke: '#282c1d' }} />
+              <YAxis stroke="#8e918f" fontSize={11} tickLine={false} axisLine={{ stroke: '#282c1d' }} allowDecimals={false} />
+              <Tooltip content={<CustomTimelineTooltip />} />
+              <Area
+                type="monotone"
+                dataKey="total"
+                stroke="#BEF500"
+                strokeWidth={2.5}
+                fillOpacity={1}
+                fill="url(#scanGradient)"
+                name="Total Scans"
+                activeDot={{ r: 5, fill: '#BEF500', stroke: '#0c0f04', strokeWidth: 2 }}
+              />
+              <Area
+                type="monotone"
+                dataKey="escalation"
+                stroke="#FF2E9F"
+                strokeWidth={2}
+                fillOpacity={1}
+                fill="url(#escGradient)"
+                name="Privilege Escalation"
+                activeDot={{ r: 4, fill: '#FF2E9F', stroke: '#0c0f04', strokeWidth: 2 }}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
         </div>
       </div>
 

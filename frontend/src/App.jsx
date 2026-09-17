@@ -92,40 +92,42 @@ function Dashboard() {
 
         {/* Dynamic Page Router Canvas */}
         <main className="flex-1 p-4 sm:p-6 md:p-8 max-w-[1800px] w-full mx-auto">
-          {activeTab === 'overview' && (
-            <OverviewPage
-              searchTerm={searchTerm}
-              key={lastRefreshed.getTime()}
-              onNavigateToAssistant={handleNavigateToAssistant}
-            />
-          )}
-          {activeTab === 'drift' && (
-            <DriftAnalyzerPage
-              searchTerm={searchTerm}
-              key={lastRefreshed.getTime()}
-              onNavigateToAssistant={handleNavigateToAssistant}
-            />
-          )}
-          {activeTab === 'hygiene' && (
-            <CredentialHygienePage
-              searchTerm={searchTerm}
-              key={lastRefreshed.getTime()}
-              onNavigateToAssistant={handleNavigateToAssistant}
-            />
-          )}
-          {activeTab === 'assistant' && (
-            <AiAssistantPage
-              initialQuery={initialAssistantQuery}
-              key={initialAssistantQuery || 'assistant'}
-            />
-          )}
-          {activeTab === 'history' && (
-            <ScanHistoryPage
-              searchTerm={searchTerm}
-              key={lastRefreshed.getTime()}
-              onNavigateToAssistant={handleNavigateToAssistant}
-            />
-          )}
+          <div key={activeTab} className="animate-tab-enter">
+            {activeTab === 'overview' && (
+              <OverviewPage
+                searchTerm={searchTerm}
+                key={lastRefreshed.getTime()}
+                onNavigateToAssistant={handleNavigateToAssistant}
+              />
+            )}
+            {activeTab === 'drift' && (
+              <DriftAnalyzerPage
+                searchTerm={searchTerm}
+                key={lastRefreshed.getTime()}
+                onNavigateToAssistant={handleNavigateToAssistant}
+              />
+            )}
+            {activeTab === 'hygiene' && (
+              <CredentialHygienePage
+                searchTerm={searchTerm}
+                key={lastRefreshed.getTime()}
+                onNavigateToAssistant={handleNavigateToAssistant}
+              />
+            )}
+            {activeTab === 'assistant' && (
+              <AiAssistantPage
+                initialQuery={initialAssistantQuery}
+                key={initialAssistantQuery || 'assistant'}
+              />
+            )}
+            {activeTab === 'history' && (
+              <ScanHistoryPage
+                searchTerm={searchTerm}
+                key={lastRefreshed.getTime()}
+                onNavigateToAssistant={handleNavigateToAssistant}
+              />
+            )}
+          </div>
         </main>
       </div>
     </div>
