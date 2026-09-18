@@ -405,10 +405,11 @@ app.add_middleware(SlowAPIMiddleware)
 # Restrict allowed origins strictly to the trusted local development frontend ports.
 # We explicitly avoid wildcard '*' origins, regex matching, or arbitrary host headers.
 origins = [
-    "http://localhost:5173",  # Standard Vite React Dev Server
+    "http://localhost:5173",   # Standard Vite React Dev Server
     "http://127.0.0.1:5173",
-    "http://localhost:3000",  # Standard React App Dev Server
+    "http://localhost:3000",   # Standard React App Dev Server
     "http://127.0.0.1:3000",
+    "https://iam-project-six.vercel.app",   # Vercel production frontend
 ]
 
 app.add_middleware(
