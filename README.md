@@ -13,9 +13,20 @@
 
 **A continuous Cloud Infrastructure Entitlement Management (CIEM) platform that detects IAM privilege escalation, permission drift, and credential hygiene risks in AWS, paired with an AI Security Analyst (NIMORA).**
 
-[Features](#-key-features) • [Tech Stack](#-tech-stack) • [Architecture](#-architecture) • [Getting Started](#-setup-instructions) • [Screenshots](#-screenshots) • [Author](#-about-the-developer)
+[Live Demo](#-live-demo) • [Features](#-key-features) • [Tech Stack](#-tech-stack) • [Architecture](#-architecture) • [Getting Started](#-setup-instructions) • [Screenshots](#-screenshots) • [Author](#-about-the-developer)
 
 </div>
+
+---
+
+## 🚀 Live Demo
+
+- **Frontend (React):** https://iam-project-six.vercel.app
+- **Backend API (FastAPI):** https://iam-project-wm17.onrender.com
+- **API Documentation (Swagger):** https://iam-project-wm17.onrender.com/docs
+
+> [!NOTE]
+> Backend is hosted on Render's free tier, so the first request after inactivity may take 30-50 seconds to spin up.
 
 ---
 
